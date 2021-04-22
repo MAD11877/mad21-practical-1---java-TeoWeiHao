@@ -1,3 +1,4 @@
+import java.awt.Dialog.ModalExclusionType;
 import java.util.Scanner;
 
 public class Question5
@@ -27,6 +28,33 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
-    
+
+    int n = in.nextInt();
+    int i[] = new int[n];
+
+    for(int a = 0; a < n; a++){
+      i[a] = in.nextInt();
+    }
+
+    int maxCount = 0;
+    int maxInteger = 0;
+
+    for(int x = 0; x < n; x++){
+
+      int count = 0;
+
+      for(int y = 0; y < n; y++){
+        if(i[x] == i[y]){
+          count += 1;
+        }
+      }
+
+      if(count > maxCount){
+        maxCount = count;
+        maxInteger = i[x];
+      }
+    }
+
+    System.out.println(maxInteger);
   }
 }
